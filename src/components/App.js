@@ -1,35 +1,17 @@
-import logo from './images/header-logo.svg';
-import './index.css';
+
+import '../index.css';
+import Header from './Header';
+import Footer from './Footer';
+import Main from './Main';
 
 function App() {
   return (
     <div className="App">
       <body className="root">
       <div className="page">
-      <header className="header page__content">
-        <img src= {logo} alt="логотип" className="header__logo" />
-      </header>
-      <main className="content">
-        <section className="profile page__content">
-          <div className="profile__overlay">
-            <img src="./images/profile-avatar.jpg" alt="#" className="profile__avatar" />
-            <button className="profile__avatar-edit-button" ></button>
-          </div>
-          <div className="profile__info">
-            <h1 className="profile__title text-content">Жак-Ив Кусто</h1>
-            <p className="profile__description text-content">Исследователь океана</p>
-            <button type="button" className="profile__popup-button"></button>
-          </div>
-          <button type="button" className="profile__add-button"></button>
-        </section>
-        <section className="cards" aria-label="#">
-          <ul className="cards__list">
-          </ul>
-        </section>
-      </main>
-      <footer className="footer page__content">
-        <p className="footer__copyright">&copy; 2020 Mesto Russia</p>
-      </footer>
+        <Header />
+        <Main />
+        <Footer />
       </div>
   <section className="overlay overlay_type_edit">
     <div className="popup">
