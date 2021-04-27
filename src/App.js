@@ -1,9 +1,11 @@
 import logo from './logo.svg';
-import './App.css';
+import './index.css';
 
 function App() {
   return (
     <div className="App">
+      <body className="root">
+      <div className="page">
       <header className="header page__content">
         <img src= "./images/header-logo.svg" alt="логотип" className="header__logo" />
       </header>
@@ -28,6 +30,7 @@ function App() {
       <footer className="footer page__content">
         <p className="footer__copyright">&copy; 2020 Mesto Russia</p>
       </footer>
+      </div>
   <section className="overlay overlay_type_edit">
     <div className="popup">
       <form novalidate  name="edit" className="popup__container popup__container_type_edit">
@@ -94,7 +97,9 @@ function App() {
         </div>
     </li>
   </template>
+      </body>
     </div>
+
   );
 }
 
