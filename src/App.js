@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './images/header-logo.svg';
 import './index.css';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
       <body className="root">
       <div className="page">
       <header className="header page__content">
-        <img src= "./images/header-logo.svg" alt="логотип" className="header__logo" />
+        <img src= {logo} alt="логотип" className="header__logo" />
       </header>
       <main className="content">
         <section className="profile page__content">
