@@ -27,8 +27,8 @@ React.useEffect(()=>{
                              className="profile__avatar-edit-button" />
                 </div>
                 <div className="profile__info">
-                    <h1 className="profile__title text-content">Жак-Ив Кусто</h1>
-                    <p className="profile__description text-content">Исследователь океана</p>
+                    <h1 className="profile__title text-content">{userName}</h1>
+                    <p className="profile__description text-content">{userDescription}</p>
                     <button onClick={props.onEditProfile}
                             type="button"
                             className="profile__popup-button" />
