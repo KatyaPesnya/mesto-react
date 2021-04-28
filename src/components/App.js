@@ -11,6 +11,8 @@ function App() {
     const [isEditProfilePopupOpen, setEditProfilePopupOpen] = React.useState(false);
     const [isAddPlacePopupOpen, setAddPlacePopupOpen] = React.useState(false);
     const [isEditAvatarPopupOpen, setEditAvatarPopupOpen] = React.useState(false);
+    const[selectedCard, setSelectedCard] = React.useState(false)
+
     function handleEditProfileClick() {
         setEditProfilePopupOpen(!isEditProfilePopupOpen);
     }
@@ -26,7 +28,7 @@ function App() {
         setEditProfilePopupOpen(false)
         setAddPlacePopupOpen(false)
         setEditAvatarPopupOpen(false)
-
+        setSelectedCard(false)
     }
   return (
     <div className="App">
@@ -99,19 +101,7 @@ function App() {
     />
     <ImagePopup />
 
-  <template className="card-template">
-    <li className="card">
-        <img className="card__image" src ='#' alt='#' />
-        <button type="button" className="card__delete"/>
-        <div className="card__item">
-          <h2 className="card__title text-content" > </h2>
-          <div className="card__like-container">
-            <button type="button" className="card__like"/>
-            <span className="card__like-count">0</span>
-          </div>
-        </div>
-    </li>
-  </template>
+
 </div>
     </div>
 

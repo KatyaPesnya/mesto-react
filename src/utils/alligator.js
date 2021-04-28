@@ -1,5 +1,5 @@
 
- class Api {
+ class Alligator {
     constructor(options) {
         this._url = options.url;
         this._headers = options.headers;
@@ -81,7 +81,7 @@
     }
 }
 
- const api = new Api({
+ const api = new Alligator({
      url: 'https://mesto.nomoreparties.co/v1/cohort-21',
      headers: {
      Authorization: '8bc2b522-b2e5-4475-a3df-8cf1760d3928',

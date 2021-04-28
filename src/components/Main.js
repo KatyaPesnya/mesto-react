@@ -1,23 +1,26 @@
 import React from 'react';
-import api from '../utils/Api';
+import api from '../utils/alligator';
+import Card from './Card';
 
 function Main(props) {
-    const [userName, setUserName] = React.useState()
-    const [userDescription, setUserDescription] = React.useState()
-    const[userAvatar, setUserAvatar] = React.useState()
-React.useEffect(()=>{
-    api.getInfo()
-        .then((data)=>{
-            const userData = data;
-            setUserName(userData.name);
-            setUserDescription(userData.about);
-            setUserAvatar(userData.avatar)
-        })
-        .catch((err) => {
-            console.log(err);
-        })
-}, [userName, userDescription, userAvatar])
+    const [userName, setUserName] = React.useState('')
+    const [userDescription, setUserDescription] = React.useState('')
+    const[userAvatar, setUserAvatar] = React.useState('')
+    const[cards, setCards] = React.useState([])
 
+    React.useEffect(()=>{
+        api.getData()
+            .then((data)=>{
+                const [userData, cardsData] = data;
+                setUserName(userData.name);
+                setUserDescription(userData.about);
+                setUserAvatar(userData.avatar)
+                setCards(cardsData)
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }, [])
     return (
         <main className="content">
             <section className="profile page__content">
@@ -39,6 +42,13 @@ React.useEffect(()=>{
             </section>
             <section className="cards" aria-label="#">
                 <ul className="cards__list">
+                    {cards.map(card =>
+                        <Card
+                            key={card._id}
+                            card={card}
+                            onCardClick={props.onCardClick}
+                        />
+                    )}
                 </ul>
             </section>
         </main>
