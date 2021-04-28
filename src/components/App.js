@@ -30,7 +30,6 @@ function App() {
         }
         submitMessage="Сохранить"
             />
-    debugger
     <PopupWithForm
         name="add"
         title="Новое место"

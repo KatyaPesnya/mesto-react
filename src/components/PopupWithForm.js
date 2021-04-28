@@ -7,11 +7,11 @@ function PopupWithForm(props){
                        <form noValidate  className="popup__container" name={props.name}>
                            <h2 className="popup__heading">{props.title}</h2>
                            {props.children}
-                           <button  type="submit" className="popup__button ">{props.submitMessage}</button>
+                           <button  type="submit" className="popup__button">{props.submitMessage}</button>
                        </form>
                       <button type="button" className=" overlay__close popup__close"></button>
                    </div>
-              </section>
+      </section>
     )
 }
 export default PopupWithForm;

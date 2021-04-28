@@ -31,15 +31,15 @@ function Main() {
 export default Main;
 
 function handleEditAvatarClick(){
-   document.querySelector('.overlay').classList.toggle('overlay_opened')
+   document.querySelector('.popup_type_avatar').parentElement.classList.toggle('overlay_opened')
 
 }
 function   handleEditProfileClick(){
-        document.querySelector('.overlay').classList.toggle('overlay_opened')
+        document.querySelector('.popup_type_edit').parentElement.classList.toggle('overlay_opened')
 
 }
 
 function handleAddPlaceClick (){
-    document.querySelector('.overlay').classList.toggle('overlay_opened')
+    document.querySelector('.popup_type_add').parentElement.classList.toggle('overlay_opened')
 
 }
