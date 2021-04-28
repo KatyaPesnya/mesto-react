@@ -3,69 +3,70 @@ import '../index.css';
 import Header from './Header';
 import Footer from './Footer';
 import Main from './Main';
-
+import PopupWithForm from './PopupWithForm'
+import ImagePopup from "./ImagePopup";
 function App() {
   return (
     <div className="App">
-      <body className="root">
+< div className="root">
       <div className="page">
         <Header />
         <Main />
         <Footer />
       </div>
-  <section className="overlay overlay_type_edit">
-    <div className="popup">
-      <form novalidate  name="edit" className="popup__container popup__container_type_edit">
-        <h2 className="popup__heading">Редактировать профиль</h2>
-        <input id="name-input" type="text" name="title" minlength='2' maxlength='40' required className="popup__input"></input>
-          <span className="popup__input-error name-input-error"></span>
-          <input id="job-input" type="text" name="description"   minlength='2' maxlength='200' required className="popup__input"></input>
-            <span className="popup__input-error job-input-error"></span>
-            <button  type="submit" className="popup__button popup__button_type_edit">Сохранить</button>
-      </form>
-      <button type="button" className=" overlay__close popup__close popup__close_type_edit"></button>
-    </div>
-  </section>
-  <section className="overlay overlay_type_add">
-    <div className="popup">
-      <form  novalidate  name="add" className="popup__container popup__container_type_add">
-        <h2 className="popup__heading">Новое место</h2>
-        <input id="title-input" type="text" name="caption" required minlength='2' maxlength='30' placeholder="Название" className="popup__input"></input>
-          <span className="popup__input-error title-input-error"></span>
-          <input id="url-input" type="url" name="url" required placeholder="Ссылка на картинку" className="popup__input"></input>
-            <span className="popup__input-error url-input-error"></span>
-            <button type="submit" className="popup__button popup__button_disabled  popup__button_type_add ">Создать</button>
-      </form>
-      <button type="button" className=" overlay__close popup__close popup__close_type_add"></button>
-    </div>
-  </section>
-  <section className="overlay overlay_type_preview" aria-label="#">
-    <div className="overlay__container overlay__container_type_image">
-      <img src="#" alt="#" className="overlay__image"></img>
-        <h2 className="overlay__caption"></h2>
-        <button type="button" className="overlay__close  overlay__close_type_image"></button>
-    </div>
-  </section>
-  <section className="overlay overlay_delete-card">
-    <div className="popup">
-      <form novalidate  name="delete-card" className="popup__container popup__container_delete-card">
-        <h2 className="popup__heading">Вы уверены?</h2>
-        <button  type="submit" className="popup__button popup__button_delete-card">Да</button>
-      </form>
-      <button type="button" className=" overlay__close popup__close popup__close_delete-card"></button>
-    </div>
-  </section>
-  <section className="overlay overlay_avatar">
-    <div className="popup">
-      <form novalidate  name="avatar" className="popup__container popup__container_avatar">
-        <h2 className="popup__heading">Обновить аватар</h2>
-        <input id="avatar-input" type="url" name="avatar"  required className="popup__input"></input>
-          <span className="popup__input-error avatar-input-error"></span>
-          <button  type="submit" className="popup__button popup__button_avatar">Сохранить</button>
-      </form>
-      <button type="button" className=" overlay__close popup__close popup__close_avatar"></button>
-    </div>
-  </section>
+    <PopupWithForm
+
+        name="edit"
+        title="Редактировать профиль"
+        children={
+            <>
+                <input id="name-input" type="text" name="title" minLength='2' maxLength='40' required
+                       className="popup__input"></input>
+                <span className="popup__input-error name-input-error"></span>
+                <input id="job-input" type="text" name="description" minLength='2' maxLength='200' required
+                       className="popup__input"></input>
+                <span className="popup__input-error job-input-error"></span>
+            </>
+        }
+        submitMessage="Сохранить"
+            />
+    debugger
+    <PopupWithForm
+        name="add"
+        title="Новое место"
+        children={
+            <>
+            <input id="title-input" type="text" name="caption" required minLength='2' maxLength='30' placeholder="Название" className="popup__input"></input>
+                <span className="popup__input-error title-input-error"></span>
+                <input id="url-input" type="url" name="url" required placeholder="Ссылка на картинку" className="popup__input"></input>
+                <span className="popup__input-error url-input-error"></span>
+
+            </>
+        }
+        submitMessage="Создать"
+    />
+    <PopupWithForm
+        name="delete-card"
+        title="Вы уверены?"
+        children={
+            <>
+            </>
+        }
+        submitMessage="Да"
+    />
+    <PopupWithForm
+        name="avatar"
+        title="Обновить аватар"
+        children={
+            <>
+                <input id="avatar-input" type="url" name="avatar"  required className="popup__input"></input>
+                <span className="popup__input-error avatar-input-error"></span>
+            </>
+        }
+        submitMessage="Сохранить"
+    />
+    <ImagePopup />
+
   <template className="card-template">
     <li className="card">
         <img className="card__image" src ='#' alt='#'></img>
@@ -79,7 +80,7 @@ function App() {
         </div>
     </li>
   </template>
-      </body>
+</div>
     </div>
 
   );
