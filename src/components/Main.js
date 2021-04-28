@@ -1,13 +1,28 @@
 import React from 'react';
-import profileAvatar from '../images/profile-avatar.jpg'
-
+import api from '../utils/Api';
 
 function Main(props) {
+    const [userName, setUserName] = React.useState()
+    const [userDescription, setUserDescription] = React.useState()
+    const[userAvatar, setUserAvatar] = React.useState()
+React.useEffect(()=>{
+    api.getInfo()
+        .then((data)=>{
+            const userData = data;
+            setUserName(userData.name);
+            setUserDescription(userData.about);
+            setUserAvatar(userData.avatar)
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}, [userName, userDescription, userAvatar])
+
     return (
         <main className="content">
             <section className="profile page__content">
                 <div className="profile__overlay">
-                    <img src= {profileAvatar} alt="#" className="profile__avatar" />
+                    <img src={userAvatar} style={{ backgroundImage: `url(${userAvatar})`}} alt={`Аватар пользователя ${userName}`} className="profile__avatar" />
                     <button  onClick={props.onEditAvatar}
                              className="profile__avatar-edit-button" />
                 </div>
