@@ -11,7 +11,7 @@
         return Promise.reject(`Ошибка ${res.status}`);
     }
     getData() {
-        return Promise.all([this.getInfo(), this.getCards()]);
+        return Promise.all([this.getUserInfo(), this.getCards()]);
     }
     getCards() {
         return fetch(`${this._url}/cards`, {
@@ -37,13 +37,13 @@
             .then(this._checkResponse)
     }
 
-    getInfo() {
+    getUserInfo() {
         return fetch(`${this._url}/users/me`, {
             headers: this._headers,
         })
             .then(this._checkResponse)
     }
-    setInfo({name, about}) {
+    setUserInfo({name, about}) {
         return fetch(`${this._url}/users/me`, {
             method: 'PATCH',
             headers: this._headers,

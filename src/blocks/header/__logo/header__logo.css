@@ -4,7 +4,7 @@
 }
 
 .header__logo:hover {
-    transform: translate(10px);
+   cursor: pointer;
   }
   
 @media (min-width: 1280px) {

@@ -1,3 +1,21 @@
+# Проектная работа: "Mesto (React App)".
+
+## Описание:
+"Mesto" - это интерактивная страница, где пользователи могут делиться фотографиями. Она создана в рамках прохождения 4-11 спринтов курса. Данная работа переведена на фреймворк React. 
+
+## Технологии:
+1. Flexbox
+2. Grid Layout
+3. Positioning Elements
+4. Animation and Transform using CSS
+5. BEM Methodology
+6. File Structure and File Paths (Nested BEM)
+7. Git
+8. JavaScript ( OOP, Fetch API)
+9. Webpack
+10. React JS
+11. Functional Components
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
