@@ -7,10 +7,10 @@ import ImagePopup from "./ImagePopup";
 
 function App() {
 
-  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
-  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
-  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
-  const [selectedCard, setSelectedCard] = React.useState(null)
+  const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
+  const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
+  const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState(null)
 
   function handleEditProfileClick() {
     setIsEditProfilePopupOpen(!isEditProfilePopupOpen);
@@ -55,7 +55,6 @@ function App() {
               isOpen={isEditProfilePopupOpen}
               onClose={closeAllPopups}
           >
-            <>
               <input className="popup__input" id="name-input" type="text" name="title" minLength='2' maxLength='40'
                      required/>
               <span className="popup__input-error name-input-error"/>
@@ -63,7 +62,6 @@ function App() {
                      maxLength='200' required/>
               <span className="popup__input-error job-input-error"/>
 
-            </>
           </PopupWithForm>
           <PopupWithForm
               name="add"
@@ -72,15 +70,12 @@ function App() {
               isOpen={isAddPlacePopupOpen}
               onClose={closeAllPopups}
           >
-            <>
               <input id="title-input" type="text" name="caption" required minLength='2' maxLength='30'
                      placeholder="Название" className="popup__input"/>
               <span className="popup__input-error title-input-error"/>
               <input id="url-input" type="url" name="url" required placeholder="Ссылка на картинку"
                      className="popup__input"/>
               <span className="popup__input-error url-input-error"/>
-
-            </>
 
           </PopupWithForm>
           <PopupWithForm
@@ -95,10 +90,8 @@ function App() {
               isOpen={isEditAvatarPopupOpen}
               onClose={closeAllPopups}
           >
-            <>
               <input id="avatar-input" type="url" name="avatar" required className="popup__input"/>
               <span className="popup__input-error avatar-input-error"/>
-            </>
 
           </PopupWithForm>
           <ImagePopup
