@@ -43,6 +43,14 @@
         })
             .then(this._checkResponse)
     }
+   changeLikeCardStatus(id, isLiked) {
+     if (isLiked) {
+       return this.setLike(id);
+     } else {
+       return this.deleteLike(id);
+     }
+   }
+
     setUserInfo({name, about}) {
         return fetch(`${this._url}/users/me`, {
             method: 'PATCH',

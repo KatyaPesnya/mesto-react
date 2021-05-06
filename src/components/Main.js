@@ -1,21 +1,28 @@
 import React, {useState} from 'react';
 import api from '../utils/api';
 import Card from './Card';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
 function Main(props) {
-  const [userName, setUserName] = useState('')
-  const [userDescription, setUserDescription] = useState('')
-  const [userAvatar, setUserAvatar] = useState('')
   const [cards, setCards] = useState([])
+  const currentUser = React.useContext(CurrentUserContext);
+  function handleCardLike(card) {
+    // Снова проверяем, есть ли уже лайк на этой карточке
+    const isLiked = card.likes.some(i => i._id === currentUser._id);
+
+    // Отправляем запрос в API и получаем обновлённые данные карточки
+    api.changeLikeCardStatus(card._id, !isLiked).then((newCard) => {
+      setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
+    })
+  .catch((err) => {
+      console.log(err);
+    })
+  }
 
   React.useEffect(() => {
-    api.getData()
+    api.getCards()
         .then((data) => {
-          const [userData, cardsData] = data;
-          setUserName(userData.name);
-          setUserDescription(userData.about);
-          setUserAvatar(userData.avatar)
-          setCards(cardsData)
+          setCards(data)
         })
         .catch((err) => {
           console.log(err);
@@ -25,14 +32,14 @@ function Main(props) {
       <main className="content">
         <section className="profile page__content">
           <div className="profile__overlay">
-            <img src={userAvatar} style={{backgroundImage: `url(${userAvatar})`}}
-                 alt={`Аватар пользователя ${userName}`} className="profile__avatar"/>
+            <img src={currentUser.avatar} style={{backgroundImage: `url(${currentUser.avatar})`}}
+                 alt={`Аватар пользователя ${currentUser.name}`} className="profile__avatar"/>
             <button onClick={props.onEditAvatar}
                     className="profile__avatar-edit-button"/>
           </div>
           <div className="profile__info">
-            <h1 className="profile__title text-content">{userName}</h1>
-            <p className="profile__description text-content">{userDescription}</p>
+            <h1 className="profile__title text-content">{currentUser.name}</h1>
+            <p className="profile__description text-content">{currentUser.about}</p>
             <button onClick={props.onEditProfile}
                     type="button"
                     className="profile__popup-button"/>
@@ -48,6 +55,8 @@ function Main(props) {
                     key={card._id}
                     card={card}
                     onCardClick={props.onCardClick}
+                    onCardLike={handleCardLike}
+                   // onCardDelete={handleCardDelete}
                 />
             )}
           </ul>
