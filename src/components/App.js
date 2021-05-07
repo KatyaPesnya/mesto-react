@@ -4,6 +4,7 @@ import Footer from './Footer';
 import Main from './Main';
 import PopupWithForm from './PopupWithForm';
 import ImagePopup from "./ImagePopup";
+import EditProfilePopup from './EditProfilePopup';
 import api from "../utils/api";
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 
@@ -45,7 +46,17 @@ function App() {
     setIsEditAvatarPopupOpen(false)
     setSelectedCard(null)
   }
-
+  function handleUpdateUser(data){
+    api.setUserInfo()
+        .then((data)=> {
+          setCurrentUser(data);
+          closeAllPopups();
+        },
+        (err) => {
+              console.log(err);
+            }
+            )
+}
   return (
       <CurrentUserContext.Provider value={currentUser}>
       <div className="App">
@@ -61,21 +72,7 @@ function App() {
             />
             <Footer/>
           </div>
-          <PopupWithForm
-              name="edit"
-              title="Редактировать профиль"
-              submitText="Сохранить"
-              isOpen={isEditProfilePopupOpen}
-              onClose={closeAllPopups}
-          >
-              <input className="popup__input" id="name-input" type="text" name="title" minLength='2' maxLength='40'
-                     required/>
-              <span className="popup__input-error name-input-error"/>
-              <input className="popup__input" id="job-input" type="text" name="description" minLength='2'
-                     maxLength='200' required/>
-              <span className="popup__input-error job-input-error"/>
-
-          </PopupWithForm>
+          <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser}/>
           <PopupWithForm
               name="add"
               title="Новое место"
