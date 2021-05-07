@@ -47,15 +47,15 @@ function App() {
     setSelectedCard(null)
   }
   function handleUpdateUser(data){
-    api.setUserInfo()
+    api.setUserInfo(data)
         .then((data)=> {
           setCurrentUser(data);
           closeAllPopups();
-        },
-        (err) => {
-              console.log(err);
-            }
-            )
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+
 }
   return (
       <CurrentUserContext.Provider value={currentUser}>

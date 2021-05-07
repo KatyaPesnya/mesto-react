@@ -35,11 +35,11 @@ function EditProfilePopup(props){
       onClose={props.onClose}
       onSubmit={handleSubmit}
   >
-    <input className="popup__input" id="name-input" type="text" name="title" minLength='2' maxLength='40'
-           required/>
+    <input className="popup__input" id="name-input" type="text" name="name" minLength='2' maxLength='40'
+           required value={name || ''} onChange={handleChangeName}/>
     <span className="popup__input-error name-input-error"/>
-    <input className="popup__input" id="job-input" type="text" name="description" minLength='2'
-           maxLength='200' required/>
+    <input className="popup__input" id="job-input" type="text" name="about" minLength='2'
+           maxLength='200' required value={description || ''} onChange={handleChangeDescription}/>
     <span className="popup__input-error job-input-error"/>
 
   </PopupWithForm>)
