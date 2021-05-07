@@ -18,13 +18,13 @@
              headers: this._headers })
             .then(this._checkResponse)
     }
-    createCard({caption: name, url: link}) {
+    createCard(data) {
         return fetch(`${this._url}/cards`, {
             method: 'POST',
             headers: this._headers,
             body: JSON.stringify({
-                name: name,
-                link: link
+                name: data.name,
+                link: data.link
             })
         })
             .then(this._checkResponse)
