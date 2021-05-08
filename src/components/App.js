@@ -16,7 +16,7 @@ function App() {
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState(null)
-  const [currentUser, setCurrentUser] = useState('')
+  const [currentUser, setCurrentUser] = useState({})
 
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
@@ -102,10 +102,10 @@ function App() {
         })
 
 }
-  function handleUpdateAvatar({avatar}) {
-    api.setUserAvatar({avatar})
-        .then(({avatar}) => {
-              setCurrentUser({avatar});
+  function handleUpdateAvatar(data) {
+    api.setUserAvatar(data)
+        .then((data) => {
+              setCurrentUser(data);
               closeAllPopups();
             })
         .catch((err) => {
@@ -132,7 +132,7 @@ function App() {
           </div>
           <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser}/>
           <AddPlacePopup isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} onAddPlace={handleAddPlaceSubmit}/>
-          <PopupWithForm name="delete-card" title="Вы уверены?" submitText="Да"/>
+          <PopupWithForm   name="delete-card" title="Вы уверены?" submitText="Да"/>
           <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar}/>
           <ImagePopup card={selectedCard} onClose={closeAllPopups}/>
         </div>

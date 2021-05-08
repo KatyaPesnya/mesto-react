@@ -7,17 +7,20 @@ function AddPlacePopup(props){
 
   function handleChangeName(e) {
     setName(e.target.value);
+
   }
 
   function handleChangeLink(e) {
     setLink(e.target.value);
+
   }
 
   function handleSubmit(e) {
     e.preventDefault();
+
     props.onAddPlace({
-      name: name,
-      link: link,
+      name: name ,
+      link: link ,
     })
   }
   return(

@@ -62,12 +62,12 @@
         })
             .then(this._checkResponse)
     }
-    setUserAvatar({avatar}) {
+    setUserAvatar(data) {
         return fetch(`${this._url}/users/me/avatar`, {
             method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
-                avatar: avatar
+                avatar: data.avatar
               })
             })
             .then(this._checkResponse)
