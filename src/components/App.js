@@ -127,6 +127,7 @@ function App() {
                 onAddPlace={handleAddPlaceClick}
                 onEditAvatar={handleEditAvatarClick}
                 onCardClick={handleCardClick}
+
             />
             <Footer/>
           </div>
