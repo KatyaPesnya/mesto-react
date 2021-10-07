@@ -1,88 +1,70 @@
-# Проектная работа: "Mesto (React App)".
+# Проектная работа: "Mesto (Reactjs App)".Создана в рамках учебы в Яндекс.Практикум на курсе "Веб-разработчик".
 
-## Описание:
-"Mesto" - это интерактивная страница, где пользователи могут делиться фотографиями. Она создана в рамках прохождения 4-11 спринтов курса. Данная работа переведена на фреймворк React. 
+# Описание:
 
-## Технологии:
-1. Flexbox
-2. Grid Layout
-3. Positioning Elements
-4. Animation and Transform using CSS
-5. BEM Methodology
-6. File Structure and File Paths (Nested BEM)
-7. Git
-8. JavaScript ( OOP, Fetch API)
-9. Webpack
-10. React JS
-11. Functional Components
+"Mesto" - это интерактивная страница, где пользователи могут делиться фотографиями. Она создана в рамках прохождения 4-11 спринтов курса. Данная работа переведена на фреймворк React. [Ссылка на репозиторий с версией проектной работы на Pure JS](https://github.com/KatyaPesnya/mesto)
 
-# Getting Started with Create React App
+# Функционал:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* Добавление и удаление фотографии
+* "Лайк" для фотографии
+* Редактирование профиля пользователя
+* Данные хранятся на сервере и загружаются с сервера
+* Валидация форм на стороне клиента
 
-## Available Scripts
+# Технологии:
 
-In the project directory, you can run:
+* Flexbox
+* Grid Layout
+* Positioning Elements
+* Animation and Transform using CSS
+* BEM Methodology
+* File Structure and File Paths (Nested BEM)
+* Git
+* JavaScript (Asynchronous JS, OOP, Fetch API)
+* Webpack
+* React JS
+* Functional Components
 
-### `npm start`
+# Инструкция по установке:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+Клонировать репозиторий:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+git clone https://github.com/KatyaPesnya/mesto-react.git
 
-### `npm test`
+В директории проекта запустить приложение в режиме разработки:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+npm install
+npm start
 
-### `npm run build`
+```
+# Будущая доработка проекта будет включать в себя:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[создание сервера на Nodejs](https://github.com/KatyaPesnya/express-mesto)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Языки:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+JavaScript
 
-### `npm run eject`
+# Библиотеки:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Reactjs
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Макеты проектной работы в Figma:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* [Макет 4](https://www.figma.com/file/SLGf16iUspCIjC05qUi1dk/YP-project-4-mesto)
+* [Макет 5](https://www.figma.com/file/n0Ho0JWLOCYiVkrboLTVJo/sprint-5-mesto?node-id=0%3A1)
+* [Макет 6-7](https://www.figma.com/file/qk3Axq4MZryPzGFfCnUnrP/sprint-6-mesto?node-id=0%3A1)
+* [Макет 9](https://www.figma.com/file/PSdQFRHoxXJFs2FH8IXViF/JavaScript.-Sprint-9?node-id=0%3A1)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# Чеклисты проектной работы:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* [Чеклист 4](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-4/index.html)
+* [Чеклист 5](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-5/index.html)
+* [Чеклист 6](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-6/index.html)
+* [Чеклист 7](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-7/index.html)
+* [Чеклист 8](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-8/index.html)
+* [Чеклист 9](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-9/index.html)
+* [Чеклист 10](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-10/index.html)
+* [Чеклист 11](https://code.s3.yandex.net/web-developer/checklists/new-program/checklist-11/index.html)
